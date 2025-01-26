@@ -3,24 +3,28 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import plotly.subplots as sp
+import json
+import os
 
-DATA_TP_CREATE = {
-    "Mês/Ano": [
-        "04/24",
-        "05/24",
-        "06/24",
-        "07/24",
-        "08/24",
-        "09/24",
-        "10/24",
-        "11/24",
-        "12/24",
-        "01/25",
-    ],
-    "TP Adaptado (22 Dias Úteis)": [12, 9, 4, 19, 19, 2, 21, 17, 26, 10],
-    "TP Ideal (22 Dias Úteis)": [15] * 10,
-}
 
+def load_json_config(file_name):
+    """
+    Load configuration data from a JSON file located in the 'data' directory.
+
+    Parameters:
+    file_name (str): The name of the JSON file to load.
+
+    Returns:
+    dict: A dictionary containing the loaded data.
+    """
+    data_path = os.path.join("data", file_name)
+    with open(data_path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+DATA_TP_CREATE = load_json_config("tp_create.json")
+DATA_TASKS_BASE = load_json_config("tasks_base.json")
+DATA_TAMANHO_TASK_BASE = load_json_config("tamanho_task_base.json")
 WORK_DAYS_POA_CREATE = {
     "04/24": 22,
     "05/24": 22,
@@ -32,41 +36,6 @@ WORK_DAYS_POA_CREATE = {
     "11/24": 20,
     "12/24": 15,
     "01/25": 20,
-}
-
-DATA_TASKS_BASE = {
-    "Mês/Ano": [
-        "04/24",
-        "05/24",
-        "06/24",
-        "07/24",
-        "08/24",
-        "09/24",
-        "10/24",
-        "11/24",
-        "12/24",
-        "01/25",
-    ],
-    "TP Tasks Revisadas": [0, 1, 0, 3, 4, 2, 7, 14, 11, 2],
-    "TP Adaptado Tasks Revisadas": [0, 1, 0, 7, 4, 4, 12, 16, 19, 2],
-}
-
-DATA_TAMANHO_TASK_BASE = {
-    "Mês/Ano": [
-        "04/24",
-        "05/24",
-        "06/24",
-        "07/24",
-        "08/24",
-        "09/24",
-        "10/24",
-        "11/24",
-        "12/24",
-        "01/25",
-    ],
-    "Task P": [6, 3, 1, 5, 1, 2, 5, 9, 10, 4],
-    "Task M": [2, 2, 1, 3, 6, 0, 2, 1, 2, 2],
-    "Task G": [0, 0, 0, 1, 0, 0, 2, 1, 2, 0],
 }
 
 
