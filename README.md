@@ -38,6 +38,12 @@ The app will open in your browser at `http://localhost:8501`.
 | ----------------------------------- | ------------------------------------ |
 | ![Overview](images/change_data.png) | ![Show Graph](images/show_graph.png) |
 
+### Individual Graphs
+
+| ![Graph 1](images/graph1.png) | ![Graph 2](images/graph2.png) |
+| ----------------------------- | ----------------------------- |
+| ![Graph 3](images/graph3.png) | ![Graph 4](images/graph4.png) |
+
 ### Individual Final DataFrames
 
 <p align="center">
