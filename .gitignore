@@ -1,0 +1,38 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyx
+
+# Ignore binary files and directories
+bin/
+bin/*
+
+# Ignore virtual environment directories
+venv/
+.env/
+*.env
+
+# Ignore IDE/editor-specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and temporary files
+logs/
+*.log
+*.tmp
+*.bak
+
+# Ignore dependencies
+poetry.lock
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
